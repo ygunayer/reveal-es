@@ -23,7 +23,7 @@ body {
 
 .reveal {
   font-family: "Open Sans", sans-serif;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: normal;
   color: #333; }
 
@@ -57,7 +57,7 @@ body {
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: -0.08em;
-  text-transform: uppercase;
+  text-transform: normal;
   text-shadow: none;
   word-wrap: break-word; }
 
