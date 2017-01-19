@@ -1,0 +1,22 @@
+{
+    "settings": {
+        "analysis": {
+            "analyzer": {
+                "derbeder_analyzer": {
+                    "type": "custom",
+                    "tokenizer": "standard",
+                    "filter": [ "asciifolding", "lowercase" ]
+                }
+            }
+        }
+    },
+    "mappings": {
+        "dessert": {
+            "properties": {
+                "id": { "type": "integer" },
+                "title": { "type": "string", "analyzer": "derbeder_analyzer" },
+                "instructions": { "type": "string", "analyzer": "derbeder_analyzer" }
+            }
+        }
+    }
+}

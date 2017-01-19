@@ -1,0 +1,41 @@
+{
+    "settings": {
+        "analysis": {
+            "analyzer": {
+                "exact_analyzer": {
+                    "type": "custom",
+                    "tokenizer": "standard",
+                    "filter": [ "lowercase" ]
+                },
+                "folding_analyzer": {
+                    "type": "custom",
+                    "tokenizer": "standard",
+                    "filter": [ "asciifolding", "lowercase" ]
+                }
+            }
+        }
+    },
+    "mappings": {
+        "dessert": {
+            "properties": {
+                "id": { "type": "integer" },
+                "title": {
+                    "type": "string",
+                    "index": "not_analyzed",
+                    "fields": {
+                        "original": { "type": "string", "analyzer": "exact_analyzer" },
+                        "folded": { "type": "string", "analyzer": "folding_analyzer" }
+                    }
+                },
+                "instructions": {
+                    "type": "string",
+                    "index": "not_analyzed",
+                    "fields": {
+                        "original": { "type": "string", "analyzer": "exact_analyzer" },
+                        "folded": { "type": "string", "analyzer": "folding_analyzer" }
+                    }
+                }
+            }
+        }
+    }
+}

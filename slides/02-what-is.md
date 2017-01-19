@@ -1,8 +1,8 @@
 ## Elasticsearch Nedir
 
 - Lucene bazlı indexing engine
-- Aynı zamanda arama motoru
-- JSON veri saklayabiliyor
+- Arama motoru
+- JSON veri saklama aracı
 - Çok hızlı, highly-available ve son derece konfigüre edilebilir
 - Open-source ve bedava
 

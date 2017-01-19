@@ -1,0 +1,11 @@
+{
+    "mappings": {
+        "dessert": {
+            "properties": {
+                "id": { "type": "integer" },
+                "title": { "type": "string" },
+                "instructions": { "type": "string" }
+            }
+        }
+    }
+}

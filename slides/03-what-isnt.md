@@ -2,7 +2,7 @@
 
 - Relational database
 - ACID compliant
-- User-facing servis
+- Dışarı açılabilecek güvenli bir servis
 
 Note:
 Join falan olmadığı için bir RDBMS değil.  

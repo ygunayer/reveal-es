@@ -1,0 +1,63 @@
+{
+    "settings": {
+        "analysis": {
+            "analyzer": {
+                "exact_analyzer": {
+                    "type": "custom",
+                    "tokenizer": "standard",
+                    "filter": [ "lowercase" ]
+                },
+                "folding_analyzer": {
+                    "type": "custom",
+                    "tokenizer": "standard",
+                    "filter": [ "asciifolding", "lowercase" ]
+                },
+                "exact_prefix_analyzer": {
+                    "type": "custom",
+                    "tokenizer": "prefix_tokenizer",
+                    "filter": [ "lowercase" ]
+                },
+                "folding_prefix_analyzer": {
+                    "type": "custom",
+                    "tokenizer": "prefix_tokenizer",
+                    "filter": [ "asciifolding", "lowercase" ]
+                }
+            },
+            "tokenizer": {
+                "prefix_tokenizer": {
+                    "type": "edgeNGram",
+                    "min_gram": 2,
+                    "max_gram": 20,
+                    "token_chars": [ "letter", "digit" ]
+                }
+            }
+        }
+    },
+    "mappings": {
+        "dessert": {
+            "properties": {
+                "id": { "type": "integer" },
+                "title": {
+                    "type": "string",
+                    "index": "not_analyzed",
+                    "fields": {
+                        "original": { "type": "string", "analyzer": "exact_analyzer" },
+                        "folded": { "type": "string", "analyzer": "folding_analyzer" },
+                        "original_prefix": { "type": "string", "analyzer": "exact_prefix_analyzer" },
+                        "folded_prefix": { "type": "string", "analyzer": "folding_prefix_analyzer" }
+                    }
+                },
+                "instructions": {
+                    "type": "string",
+                    "index": "not_analyzed",
+                    "fields": {
+                        "original": { "type": "string", "analyzer": "exact_analyzer" },
+                        "folded": { "type": "string", "analyzer": "folding_analyzer" },
+                        "original_prefix": { "type": "string", "analyzer": "exact_prefix_analyzer" },
+                        "folded_prefix": { "type": "string", "analyzer": "folding_prefix_analyzer" }
+                    }
+                }
+            }
+        }
+    }
+}
